@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animation Sintax</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            border: 1px solid red;
+            width: 100%;
+        }
+
+        .container:hover .cuadrado{
+            animation-play-state: paused; /* Make animation state paused o running */
+        }
+
+        .cuadrado {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 10px;
+            border-radius: 50%;
+            animation-name: cuadrado; /* Name for animation */
+            animation-duration: 3s; /* Time for execute animation*/
+            /* animation-delay: 1s; */ /* Waiting time before animation start*/
+            animation-iteration-count: infinite; /*times to repeat the animation [ 0..n | infinite ]*/
+            /* animation-timing-function: linear; ease | ease-out | ease-in-out | linear | cubic-bezier */
+            /* animation-direction: alternate; A way how animation works according the process in the keyframe [ reverse | alternate] */
+            /* animation-fill-mode: forwards; Mantain how the animation ends, it does not return to the initial state */
+            /* animation-play-state: running; */
+            position: relative;
+            animation-direction: alternate;
+        }
+
+        /*We need @keyframs animation-name*/
+        @keyframes cuadrado {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: calc(100% - 220px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cuadrado">
+            <h1>Hola mundo!</h1>
+        </div>
+    </div>
+</body>
+</html>
